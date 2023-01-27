@@ -13,8 +13,8 @@ conversation_queue = collections.deque(maxlen=10)
 if os.path.exists("conversations.txt") and os.path.getsize("conversations.txt") > 0:
     with open("conversations.txt", "r") as f:
         conversation_queue = collections.deque(f.readlines(), maxlen=10)
+openai.api_key = os.environ['OPENAI_API_KEY']
 
-openai.api_key = "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"
 conversations = []
 
 @app.route('/')
@@ -52,5 +52,5 @@ def generate_response(prompt):
 
 if __name__ == '__main__':
     app.run()
-#client.run('MTA1OTk0NzYxMzQzODM2MTcwNA.G95WrJ.etnbPDxpzBZ3A5xassTtxUkfbnEOEgGNBdQpzE')
+
 
