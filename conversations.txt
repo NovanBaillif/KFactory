@@ -1,0 +1,5 @@
+"{\"user\": \" Novan \", \"message\": \"g\\\"\", \"response\": \"\\n\\nSalut Novan, comment vas-tu ?\"}"
+
+"{\"user\": \" Novan \", \"message\": \"\", \"response\": \"\\n\\nBonjour Novan ! Je suis KF202301V62, un bot de test de Kreol Factory. Je suis l\\u00e0 pour r\\u00e9pondre \\u00e0 tes questions et t'aider \\u00e0 mieux comprendre ce que Kreol Factory fait. Quelle question as-tu ?\"}"
+
+"{\"user\": \" Novan \", \"message\": \"\", \"response\": \"\\n\\nSalut Novan, je suis KF202301V62, un bot test de Kreol Factory. Je suis ici pour t'aider \\u00e0 tester la conversation. Que puis-je faire pour toi ?\"}"

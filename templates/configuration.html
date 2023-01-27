@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Configuration</title>
+  </head>
+  <body>
+    <h1>Bot Discord</h1>
+    <form>
+      <button type="button" id="activate_bot">Activer le bot</button>
+      <button type="button" id="deactivate_bot">Désactiver le bot</button>
+    </form>
+    <script>
+      var activateBtn = document.getElementById("activate_bot");
+      var deactivateBtn = document.getElementById("deactivate_bot");
+
+      activateBtn.onclick = function() {
+        fetch('/activate_bot', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(res => res.text())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+
+      deactivateBtn.onclick = function() {
+        fetch('/deactivate_bot', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(res => res.text())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <h1>Chatbot</h1>
+    <form>
+      <label for="question">Question:</label>
+      <input type="text" id="question" name="question">
+      <button type="button" id="submit_question">Envoyer</button>
+    </form>
+    <div id="response"></div>
+    <script>
+      var submitBtn = document.getElementById("submit_question");
+      var responseDiv = document.getElementById("response");
+
+      submitBtn.onclick = function() {
+        var question = document.getElementById("question").value;
+        fetch('/get_response', {
+          method: 'POST',
+          body: JSON.stringify({'question': question}),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(res => res.json())
+        .then(data => {
+          responseDiv.innerHTML = data.response;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    </script>
+  </body>
+</html>
